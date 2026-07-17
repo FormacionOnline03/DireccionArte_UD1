@@ -44,8 +44,10 @@ a { color: inherit; text-decoration: none; }
 }
 .index-eyebrow {
   display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   font-size: clamp(0.65rem, 0.9vw, 0.8rem);
-  letter-spacing: 0.16em;
+  letter-spacing: normal;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 0.6em;
@@ -145,15 +147,20 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.4rem 3vw;
   border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
 }
 .back-link {
+  display: inline-flex; align-items: center;
   font-size: clamp(0.7rem, 0.9vw, 0.8rem);
   letter-spacing: 0.1em; text-transform: uppercase;
   font-weight: 700;
   color: var(--navy);
-  transition: opacity 0.15s;
+  border: 1.5px solid var(--navy);
+  padding: 0.6em 1.1em;
+  transition: background 0.15s, color 0.15s;
 }
-.back-link:hover { opacity: 0.6; }
+.back-link:hover { background: var(--navy); color: var(--cream); }
 .topbar-index {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -219,6 +226,16 @@ a { color: inherit; text-decoration: none; }
   background: var(--navy-soft);
 }
 .bullet-list li strong { color: var(--navy); }
+.bullet-list a, .article-intro a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--line);
+  transition: text-decoration-color 0.15s, color 0.15s;
+}
+.bullet-list a:hover, .article-intro a:hover {
+  color: var(--navy);
+  text-decoration-color: var(--navy);
+}
 
 .article-main { flex: 1; min-width: 0; }
 
@@ -242,7 +259,9 @@ a { color: inherit; text-decoration: none; }
 
 .aside-related {
   flex: 0 0 220px;
-  padding-top: 0.2em;
+  align-self: flex-start;
+  position: sticky;
+  top: 5.5rem;
 }
 .aside-heading {
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
