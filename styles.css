@@ -58,6 +58,13 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy);
   white-space: nowrap;
 }
+.index-instruction {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  color: var(--muted);
+  margin-top: 0.9em;
+}
 
 .grid {
   display: grid;
@@ -228,17 +235,6 @@ a { color: inherit; text-decoration: none; }
   background: var(--navy-soft);
 }
 .bullet-list li strong { color: var(--navy); }
-.bullet-list a, .article-intro a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-color: var(--line);
-  transition: text-decoration-color 0.15s, color 0.15s;
-}
-.bullet-list a:hover, .article-intro a:hover {
-  color: var(--navy);
-  text-decoration-color: var(--navy);
-}
-
 .article-main { flex: 1; min-width: 0; }
 
 .gallery-grid {
